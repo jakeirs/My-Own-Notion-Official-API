@@ -3,6 +3,7 @@
 @tailwind utilities;
 @import "@9gustin/react-notion-render/dist/index.css";
 @import "./notion-render-styles.css";
+@import "highlight.js/styles/github.css";
 
 @layer base {
   :root {
