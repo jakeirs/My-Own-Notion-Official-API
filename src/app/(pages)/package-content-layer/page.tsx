@@ -1,13 +1,16 @@
+import { NotionRenderer, createBlockRenderer } from "@notion-render/client";
+import hljsPlugin from "@notion-render/hljs-plugin";
+import bookmarkPlugin from "@notion-render/bookmark-plugin";
 import ThemeToggle from "@/components/blocks/theme-toggle";
 import { Button } from "@/components/ui/button";
+import { getBlocks, notionClient } from "@/lib/notion";
 import ClientConsoleLog from "@/components/technical/ClientConsoleLog";
-import { getBlocks, getRecursivelyBlocks } from "@/lib/notion";
+import { rendererParagraph } from "./create-block-rerender";
 
 export default async function Contentlayer() {
-  const notionBlock = await getBlocks();
-  const notionRecursivelyBlock = await getRecursivelyBlocks(
-    "b3b3bc4cd37e4e75bec7984dcb4dd04c"
-  );
+  const notionBlock = (await getBlocks()) as any;
+
+  const html = await rendererParagraph.render(...notionBlock);
 
   return (
     <div className="px-20">
@@ -25,11 +28,11 @@ export default async function Contentlayer() {
       <p className="p-4">Contentlayer-source-notion</p>
       <Button variant="destructive">Add Button</Button>
       <div className="w-full h-16"></div>
+      <div className="w-full h-16"></div>
       <div>
-        <ClientConsoleLog
-          dataToLog={notionRecursivelyBlock}
-          name="filteredFromDatabase"
-          // hide
+        <div
+          className="notion-render"
+          dangerouslySetInnerHTML={{ __html: html }}
         />
       </div>
     </div>
