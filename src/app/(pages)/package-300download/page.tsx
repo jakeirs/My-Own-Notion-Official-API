@@ -3,7 +3,7 @@ import hljsPlugin from "@notion-render/hljs-plugin";
 import bookmarkPlugin from "@notion-render/bookmark-plugin";
 import ThemeToggle from "@/components/blocks/theme-toggle";
 import { Button } from "@/components/ui/button";
-import { getBlocks, notionClient } from "@/lib/notion";
+import { getBlocks, getRecursivelyBlocks, notionClient } from "@/lib/notion";
 import ClientConsoleLog from "@/components/technical/ClientConsoleLog";
 
 export default async function Package300Download() {
@@ -15,15 +15,17 @@ export default async function Package300Download() {
   notionRenderer.use(bookmarkPlugin(undefined));
 
   const notionBlock = (await getBlocks()) as any;
+  const notionRecursivelyBlock = (await getRecursivelyBlocks(
+    "b3b3bc4cd37e4e75bec7984dcb4dd04c"
+  )) as any;
 
-  const html = await notionRenderer.render(...notionBlock);
+  const html = await notionRenderer.render(...notionRecursivelyBlock);
 
   return (
     <div className="p-20">
       <ThemeToggle />
       <Button variant="destructive">Add Button</Button>
       {/* <ClientConsoleLog dataToLog={notionBlock} />   */}
-
       <h1 className="text-4xl">
         <a href="https://github.com/kerwanp/notion-render">
           @notion-render/client
@@ -35,7 +37,8 @@ export default async function Package300Download() {
         </a>
       </h2>
       <p className="p-4">Package-300 download</p>
-      <div className="w-full h-16"></div>
+      <div className="w-full h-16"></div>'
+      <ClientConsoleLog dataToLog={notionBlock} />
       <div
         className="notion-render"
         dangerouslySetInnerHTML={{ __html: html }}

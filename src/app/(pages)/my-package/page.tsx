@@ -9,7 +9,7 @@ import {
   getRecursivelyBlocks,
 } from "@/lib/notion";
 
-export default async function Package600Download() {
+export default async function MyPackage() {
   const notionBlock = await getBlocks();
   const notionRecursivelyBlock = await getRecursivelyBlocks(
     "b3b3bc4cd37e4e75bec7984dcb4dd04c"
@@ -30,10 +30,14 @@ export default async function Package600Download() {
       </h2>
       Package-600 download
       <Button variant="destructive">Add Button</Button>
-      <ClientConsoleLog dataToLog={notionRecursivelyBlock} />
       <h1>EXAMPLE</h1>
       <div>
         <Render blocks={notionRecursivelyBlock} useStyles />
+        {/* <ClientConsoleLog
+          dataToLog={notionRecursivelyBlock}
+          name="filteredFromDatabase"
+          // hide
+        /> */}
       </div>
     </div>
   );
