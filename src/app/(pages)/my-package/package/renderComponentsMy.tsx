@@ -1,15 +1,13 @@
-import ClientConsoleLog from "@/components/technical/ClientConsoleLog";
-import React, { Fragment } from "react";
+import React from "react";
 import { BlockObjectResponse } from "@notionhq/client/build/src/api-endpoints";
 import {
-  Heading1Block,
-  Heading2Block,
-  Heading3Block,
-  BulletedList,
   BulletedListBlockObjectResponse,
-} from "./components";
+  BulletedList,
+} from "./components/bulleted-list-item";
+import { Heading1Block } from "./components/heading1-block";
+import { Heading2Block } from "./components/heading2-block";
 
-function renderComponentsMy(
+export function renderComponentsMy(
   block: BlockObjectResponse | BulletedListBlockObjectResponse
 ) {
   const { type, id } = block;
@@ -26,16 +24,4 @@ function renderComponentsMy(
     default:
       return null;
   }
-}
-
-export function RenderBlocksMy(props: { blocks: BlockObjectResponse[] }) {
-  const { blocks } = props;
-
-  return (
-    <div className="notion-render">
-      {blocks.map((block: BlockObjectResponse) => (
-        <Fragment key={block.id}>{renderComponentsMy(block)}</Fragment>
-      ))}
-    </div>
-  );
 }
