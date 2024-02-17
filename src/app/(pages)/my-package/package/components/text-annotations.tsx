@@ -44,7 +44,7 @@ export const TextAnnotations = (props: {
       return <code className="notion-text-code">{plain_text}</code>;
     }
 
-    return plain_text;
+    return <span dangerouslySetInnerHTML={{ __html: plain_text }}></span>;
   };
 
   return richTextArr.map((richTextItem) => renderAnnotations(richTextItem));

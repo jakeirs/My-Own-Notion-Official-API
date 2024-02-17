@@ -6,14 +6,19 @@ import {
   Heading2Block,
   Heading3Block,
   BulletedList,
+  NumberedList,
   BulletedListBlockObjectResponse,
+  NumberedListBlockObjectResponse,
+  CalloutBlock,
 } from "./components";
 
 function renderComponentsMy(
-  block: BlockObjectResponse | BulletedListBlockObjectResponse
+  block:
+    | BlockObjectResponse
+    | BulletedListBlockObjectResponse
+    | NumberedListBlockObjectResponse
 ) {
   const { type, id } = block;
-  let value = "";
   switch (type) {
     case "heading_1":
       return <Heading1Block data={block} />;
@@ -23,6 +28,12 @@ function renderComponentsMy(
       return <Heading3Block data={block} />;
     case "bulleted_list":
       return <BulletedList data={block} />;
+    case "numbered_list":
+      return <NumberedList data={block} />;
+    case "numbered_list":
+      return <NumberedList data={block} />;
+    case "callout":
+      return <CalloutBlock data={block} />;
     default:
       return null;
   }

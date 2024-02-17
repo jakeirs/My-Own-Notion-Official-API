@@ -19,7 +19,7 @@ export default async function Package300Download() {
     "b3b3bc4cd37e4e75bec7984dcb4dd04c"
   )) as any;
 
-  const html = await notionRenderer.render(...notionRecursivelyBlock);
+  const html = await notionRenderer.render(...notionBlock);
 
   return (
     <div className="p-20">
