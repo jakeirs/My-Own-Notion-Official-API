@@ -8,6 +8,7 @@ import {
   getPage,
   getRecursivelyBlocks,
 } from "@/lib/notion";
+import { RenderBlocksMy } from "./package/Render";
 
 export default async function MyPackage() {
   const notionBlock = await getBlocks();
@@ -32,7 +33,7 @@ export default async function MyPackage() {
       <Button variant="destructive">Add Button</Button>
       <h1>EXAMPLE</h1>
       <div>
-        <Render blocks={notionRecursivelyBlock} useStyles />
+        <RenderBlocksMy blocks={notionRecursivelyBlock} />
         {/* <ClientConsoleLog
           dataToLog={notionRecursivelyBlock}
           name="filteredFromDatabase"

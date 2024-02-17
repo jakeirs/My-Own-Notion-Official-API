@@ -5,9 +5,9 @@ export default function ClientConsoleLog(props: {
   hide?: boolean;
   name?: string;
 }) {
-  const { dataToLog, hide, name = "ClientConsoleLog" } = props;
+  const { dataToLog, hide = true, name = "ClientConsoleLog" } = props;
   const content = JSON.stringify(dataToLog, null, 2);
-  console.log(name, `${content.substring(0, 8)}`, dataToLog);
+  console.log(name, dataToLog);
 
   return (
     <div>

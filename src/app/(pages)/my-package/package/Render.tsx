@@ -1,45 +1,44 @@
-import React, { useMemo } from "react";
+import ClientConsoleLog from "@/components/technical/ClientConsoleLog";
+import React, { Fragment } from "react";
+import {
+  BlockObjectResponse,
+  Heading1BlockObjectResponse,
+} from "@notionhq/client/build/src/api-endpoints";
+import {
+  BulletedListBlockObjectResponse,
+  BulletedList,
+} from "./components/bulleted-list-item";
 
-import { NotionBlock } from "../../../types/NotionBlock";
-import { indexGenerator } from "../../../utils/indexGenerator";
-import getBlocksToRender from "../../../utils/getBlocksToRender";
-import { BlockComponentsMapperType } from "../../../constants/BlockComponentsMapper/types";
-
-interface Props {
-  blocks: NotionBlock[];
+function renderComponentsMy(
+  block: BlockObjectResponse | BulletedListBlockObjectResponse
+) {
+  const { type, id } = block;
+  let value = "";
+  switch (type) {
+    // case "heading_1":
+    //   value = block[type].rich_text[0].plain_text;
+    //   return <h1 className="text-3xl">{value}</h1>;
+    // case "heading_2":
+    //   value = block[type].rich_text[0].plain_text;
+    //   return <h2 className="text-2xl">{value}</h2>;
+    case "heading_3":
+      value = block[type].rich_text[0].plain_text;
+      return <h2 className="text-xl">{value}</h2>;
+    case "bulleted_list":
+      return <BulletedList data={block} />;
+    default:
+      return null;
+  }
 }
 
-function Render({ blocks }: Props) {
-  if (!blocks || !blocks.length) return null;
+export function RenderBlocksMy(props: { blocks: BlockObjectResponse[] }) {
+  const { blocks } = props;
 
-  const render = useMemo(() => {
-    const renderBlocks = getBlocksToRender(blocks);
-    const index = indexGenerator(blocks);
-
-    return renderBlocks.map((block) => {
-      const Component = block.getComponent(blockComponentsMapper);
-
-      return Component ? (
-        <Component
-          key={block.id}
-          classNames={Boolean(classNames)}
-          emptyBlocks={emptyBlocks}
-          block={block}
-          slugifyFn={slugifyFn}
-          mapPageUrlFn={mapPageUrlFn}
-          simpleTitles={simpleTitles}
-          index={index}
-          blockComponentsMapper={blockComponentsMapper}
-        />
-      ) : null;
-    });
-  }, [blocks]);
-
-  return useStyles ? (
-    <div className="rnr-container">{render}</div>
-  ) : (
-    <React.Fragment>{render}</React.Fragment>
+  return (
+    <div className="notion-render">
+      {blocks.map((block: BlockObjectResponse) => (
+        <Fragment key={block.id}>{renderComponentsMy(block)}</Fragment>
+      ))}
+    </div>
   );
 }
-
-export default Render;
