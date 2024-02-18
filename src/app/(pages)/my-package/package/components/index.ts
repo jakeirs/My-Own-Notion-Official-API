@@ -9,3 +9,4 @@ export * from "./quote-block";
 export * from "./column-list-block";
 export * from "./todo-block";
 export * from "./toggle-block";
+export * from "./image-block";

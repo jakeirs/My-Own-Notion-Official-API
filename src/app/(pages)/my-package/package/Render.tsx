@@ -16,6 +16,7 @@ import {
   ColumnBlock,
   TodoBlock,
   ToggleBlock,
+  ImageBlock,
 } from "./components";
 import { TextAnnotations } from "./components/text-annotations";
 
@@ -54,6 +55,8 @@ export function renderComponentsMy(
       return <TodoBlock data={block} />;
     case "toggle":
       return <ToggleBlock data={block} />;
+    case "image":
+      return <ImageBlock data={block} />;
     default:
       return null;
   }
