@@ -1,3 +1,4 @@
+import { Fragment } from "react";
 import {
   ColumnListBlockObjectResponse,
   ColumnBlockObjectResponse,
@@ -8,26 +9,24 @@ export const ColumnListBlock = (props: {
   data: ColumnListBlockObjectResponse;
 }) => {
   const { data } = props;
-  const { type } = data;
 
   return (
     <div className={`notion-${data.type}`}>
-      {data.children.map((column: ColumnBlockObjectResponse) =>
-        renderComponentsMy(column)
-      )}
+      {data.children.map((column: ColumnBlockObjectResponse) => (
+        <Fragment key={column.id}>{renderComponentsMy(column)}</Fragment>
+      ))}
     </div>
   );
 };
 
 export const ColumnBlock = (props: { data: ColumnBlockObjectResponse }) => {
   const { data } = props;
-  const { type } = data;
 
   return (
     <div className={`notion-${data.type}`}>
-      {data.children.map((block: ColumnBlockObjectResponse) =>
-        renderComponentsMy(block)
-      )}
+      {data.children.map((block: ColumnBlockObjectResponse) => (
+        <Fragment key={block.id}>{renderComponentsMy(block)}</Fragment>
+      ))}
     </div>
   );
 };

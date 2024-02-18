@@ -15,6 +15,7 @@ import {
   ColumnListBlock,
   ColumnBlock,
   TodoBlock,
+  ToggleBlock,
 } from "./components";
 import { TextAnnotations } from "./components/text-annotations";
 
@@ -51,6 +52,8 @@ export function renderComponentsMy(
       return <hr className={`notion-${block.type}`} />;
     case "to_do":
       return <TodoBlock data={block} />;
+    case "toggle":
+      return <ToggleBlock data={block} />;
     default:
       return null;
   }
