@@ -1,5 +1,4 @@
 import { BulletedListItemBlockObjectResponse } from "@notionhq/client/build/src/api-endpoints";
-import ClientConsoleLog from "@/components/technical/ClientConsoleLog";
 import { TextAnnotations } from "./text-annotations";
 
 export type BulletedListBlockObjectResponse = {
