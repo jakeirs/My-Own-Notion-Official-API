@@ -18,7 +18,6 @@ export const BulletedList = (props: {
 
   return (
     <ul className={`notion-${type}`}>
-      <ClientConsoleLog dataToLog={data} />
       {data[type].children.map((block) => (
         <BulletedListItem key={id} data={block} />
       ))}

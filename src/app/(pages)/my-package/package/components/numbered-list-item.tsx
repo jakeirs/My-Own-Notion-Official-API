@@ -18,7 +18,6 @@ export const NumberedList = (props: {
 
   return (
     <ol className={`notion-${type}`}>
-      <ClientConsoleLog dataToLog={data} name="ASDASDASDSA" />
       {data[type].children.map((block) => (
         <NumberedListItem key={id} data={block} />
       ))}
