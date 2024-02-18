@@ -12,33 +12,40 @@ import {
   CalloutBlock,
   ParagraphBlock,
   QuoteBlock,
+  ColumnListBlock,
+  ColumnBlock,
 } from "./components";
 import { TextAnnotations } from "./components/text-annotations";
 
-function renderComponentsMy(
+export function renderComponentsMy(
   block:
     | BlockObjectResponse
     | BulletedListBlockObjectResponse
     | NumberedListBlockObjectResponse
 ) {
   const { type, id } = block;
+
   switch (type) {
-    // case "paragraph":
-    //   return <ParagraphBlock data={block} />;
-    // case "heading_1":
-    //   return <Heading1Block data={block} />;
-    // case "heading_2":
-    //   return <Heading2Block data={block} />;
-    // case "heading_3":
-    //   return <Heading3Block data={block} />;
-    // case "bulleted_list":
-    //   return <BulletedList data={block} />;
+    case "paragraph":
+      return <ParagraphBlock data={block} />;
+    case "heading_1":
+      return <Heading1Block data={block} />;
+    case "heading_2":
+      return <Heading2Block data={block} />;
+    case "heading_3":
+      return <Heading3Block data={block} />;
+    case "bulleted_list":
+      return <BulletedList data={block} />;
     case "numbered_list":
       return <NumberedList data={block} />;
     case "callout":
       return <CalloutBlock data={block} />;
     case "quote":
       return <QuoteBlock data={block} />;
+    case "column_list":
+      return <ColumnListBlock data={block} />;
+    case "column":
+      return <ColumnBlock data={block} />;
     default:
       return null;
   }
