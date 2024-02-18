@@ -10,7 +10,10 @@ import {
   BulletedListBlockObjectResponse,
   NumberedListBlockObjectResponse,
   CalloutBlock,
+  ParagraphBlock,
+  QuoteBlock,
 } from "./components";
+import { TextAnnotations } from "./components/text-annotations";
 
 function renderComponentsMy(
   block:
@@ -20,18 +23,22 @@ function renderComponentsMy(
 ) {
   const { type, id } = block;
   switch (type) {
-    case "heading_1":
-      return <Heading1Block data={block} />;
-    case "heading_2":
-      return <Heading2Block data={block} />;
-    case "heading_3":
-      return <Heading3Block data={block} />;
-    case "bulleted_list":
-      return <BulletedList data={block} />;
+    // case "paragraph":
+    //   return <ParagraphBlock data={block} />;
+    // case "heading_1":
+    //   return <Heading1Block data={block} />;
+    // case "heading_2":
+    //   return <Heading2Block data={block} />;
+    // case "heading_3":
+    //   return <Heading3Block data={block} />;
+    // case "bulleted_list":
+    //   return <BulletedList data={block} />;
     case "numbered_list":
       return <NumberedList data={block} />;
     case "callout":
       return <CalloutBlock data={block} />;
+    case "quote":
+      return <QuoteBlock data={block} />;
     default:
       return null;
   }

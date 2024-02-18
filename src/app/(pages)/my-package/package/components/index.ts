@@ -4,3 +4,5 @@ export * from "./heading3-block";
 export * from "./bulleted-list-item";
 export * from "./numbered-list-item";
 export * from "./callout";
+export * from "./paragraph-block";
+export * from "./quote-block";
