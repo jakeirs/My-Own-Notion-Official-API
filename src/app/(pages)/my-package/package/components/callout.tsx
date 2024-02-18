@@ -9,7 +9,7 @@ export const CalloutBlock = (props: { data: CalloutBlockObjectResponse }) => {
   return (
     <blockquote className={`notion-${type} notion-color-${data[type].color}`}>
       <ClientConsoleLog dataToLog={data} />
-      {/* <div className="icon">{data.callout.icon}</div> */}
+      <div className="icon">{data.callout.icon?.emoji}</div>
       <div className="content">
         <TextAnnotations richTextArr={data[type].rich_text} />
       </div>

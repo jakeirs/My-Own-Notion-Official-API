@@ -30,8 +30,6 @@ function renderComponentsMy(
       return <BulletedList data={block} />;
     case "numbered_list":
       return <NumberedList data={block} />;
-    case "numbered_list":
-      return <NumberedList data={block} />;
     case "callout":
       return <CalloutBlock data={block} />;
     default:
