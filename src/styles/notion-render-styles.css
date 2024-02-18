@@ -255,7 +255,8 @@
 .notion-render blockquote.notion-quote.notion-color-red {
   color: #d44c47;
 }
-.notion-render ul.notion-to_do_list li {
+/* changes to original file ul.notion-to_do_list li (24 occurrences) */
+.notion-render div.notion-to_do_list {
   margin-top: 1px;
   margin-bottom: 1px;
   padding-left: 2px;
@@ -263,65 +264,65 @@
   padding-bottom: 2px;
   display: flex;
 }
-.notion-render ul.notion-to_do_list li.notion-color-blue_background {
+.notion-render div.notion-to_do_list.notion-color-blue_background {
   background-color: #e7f3f8;
 }
-.notion-render ul.notion-to_do_list li.notion-color-red_background {
+.notion-render div.notion-to_do_list.notion-color-red_background {
   background-color: #fdebec;
 }
-.notion-render ul.notion-to_do_list li.notion-color-yellow_background {
+.notion-render div.notion-to_do_list.notion-color-yellow_background {
   background-color: #fbf3db;
 }
-.notion-render ul.notion-to_do_list li.notion-color-gray_background {
+.notion-render div.notion-to_do_list.notion-color-gray_background {
   background-color: #f1f1ef;
 }
-.notion-render ul.notion-to_do_list li.notion-color-brown_background {
+.notion-render div.notion-to_do_list.notion-color-brown_background {
   background-color: #f4eeee;
 }
-.notion-render ul.notion-to_do_list li.notion-color-orange_background {
+.notion-render div.notion-to_do_list.notion-color-orange_background {
   background-color: #fbecdd;
 }
-.notion-render ul.notion-to_do_list li.notion-color-green_background {
+.notion-render div.notion-to_do_list.notion-color-green_background {
   background-color: #edf3ec;
 }
-.notion-render ul.notion-to_do_list li.notion-color-purple_background {
+.notion-render div.notion-to_do_list.notion-color-purple_background {
   background-color: rgba(244, 240, 247, 0.8);
 }
-.notion-render ul.notion-to_do_list li.notion-color-pink_background {
+.notion-render div.notion-to_do_list.notion-color-pink_background {
   background-color: rgba(249, 238, 243, 0.8);
 }
-.notion-render ul.notion-to_do_list li.notion-color-brown {
+.notion-render div.notion-to_do_list.notion-color-brown {
   color: #9f6b53;
 }
-.notion-render ul.notion-to_do_list li.notion-color-gray {
+.notion-render div.notion-to_do_list.notion-color-gray {
   color: #787774;
 }
-.notion-render ul.notion-to_do_list li.notion-color-orange {
+.notion-render div.notion-to_do_list.notion-color-orange {
   color: #d9730d;
 }
-.notion-render ul.notion-to_do_list li.notion-color-yellow {
+.notion-render div.notion-to_do_list.notion-color-yellow {
   color: #cb912f;
 }
-.notion-render ul.notion-to_do_list li.notion-color-green {
+.notion-render div.notion-to_do_list.notion-color-green {
   color: #448361;
 }
-.notion-render ul.notion-to_do_list li.notion-color-blue {
+.notion-render div.notion-to_do_list.notion-color-blue {
   color: #337ea9;
 }
-.notion-render ul.notion-to_do_list li.notion-color-purple {
+.notion-render div.notion-to_do_list.notion-color-purple {
   color: #9065b0;
 }
-.notion-render ul.notion-to_do_list li.notion-color-pink {
+.notion-render div.notion-to_do_list.notion-color-pink {
   color: #c14c8a;
 }
-.notion-render ul.notion-to_do_list li.notion-color-red {
+.notion-render div.notion-to_do_list.notion-color-red {
   color: #d44c47;
 }
-.notion-render ul.notion-to_do_list li[data-checked="true"] {
+.notion-render div.notion-to_do_list[data-checked="true"] {
   color: rgba(55, 53, 47, 0.65);
   text-decoration: line-through rgba(55, 53, 47, 0.25);
 }
-.notion-render ul.notion-to_do_list li input[type="checkbox"] {
+.notion-render div.notion-to_do_list input[type="checkbox"] {
   appearance: none;
   display: grid;
   place-content: center;
@@ -335,14 +336,14 @@
   margin-left: 8px;
   margin-right: 8px;
 }
-.notion-render ul.notion-to_do_list li input[type="checkbox"]:checked {
+.notion-render div.notion-to_do_list input[type="checkbox"]:checked {
   background-color: #2383e2;
   border: 0;
 }
-.notion-render ul.notion-to_do_list li input[type="checkbox"]:checked::before {
+.notion-render div.notion-to_do_list input[type="checkbox"]:checked::before {
   display: block;
 }
-.notion-render ul.notion-to_do_list li input[type="checkbox"]::before {
+.notion-render div.notion-to_do_list input[type="checkbox"]::before {
   content: "";
   width: 0.65em;
   height: 0.65em;

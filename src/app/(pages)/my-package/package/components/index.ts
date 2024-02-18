@@ -7,3 +7,4 @@ export * from "./callout";
 export * from "./paragraph-block";
 export * from "./quote-block";
 export * from "./column-list-block";
+export * from "./todo-block";

@@ -14,6 +14,7 @@ import {
   QuoteBlock,
   ColumnListBlock,
   ColumnBlock,
+  TodoBlock,
 } from "./components";
 import { TextAnnotations } from "./components/text-annotations";
 
@@ -46,6 +47,10 @@ export function renderComponentsMy(
       return <ColumnListBlock data={block} />;
     case "column":
       return <ColumnBlock data={block} />;
+    case "divider":
+      return <hr className={`notion-${block.type}`} />;
+    case "to_do":
+      return <TodoBlock data={block} />;
     default:
       return null;
   }
